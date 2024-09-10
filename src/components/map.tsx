@@ -1,12 +1,11 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import MapContext from "./MapContext";
 const Map = (
   {
     center,
     level,
     className,
-    onZoomChanged,
-    onDragEnd,
+
     children,
     maxLevel,
     onCreate,
@@ -15,13 +14,6 @@ const Map = (
 ) => {
   const kakao = (window as any).kakao;
   const [map, setMap] = useState<any | null>(null);
-  // const handleZoomChanged = useCallback(() => {
-  //   if (map) onZoomChanged(map);
-  // }, [map, onZoomChanged]);
-  //
-  // const handleDragEnd = useCallback(() => {
-  //   if (map) onDragEnd(map);
-  // }, [map, onDragEnd]);
 
   useEffect(() => {
     if (map) return;
@@ -42,28 +34,6 @@ const Map = (
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [map, center]);
-
-  // useEffect(() => {
-  //   if (map) {
-  //     map.setCenter(new kakao.maps.LatLng(center.lat, center.lng));
-  //     kakao.maps.event.addListener(map, "dragend", handleDragEnd);
-  //     return () => {
-  //       kakao.maps.event.removeListener(map, "dragend", handleDragEnd);
-  //     };
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [map, center]);
-
-  // useEffect(() => {
-  //   if (map) {
-  //     map.setLevel(level);
-  //     kakao.maps.event.addListener(map, "zoom_changed", handleZoomChanged);
-  //     return () => {
-  //       kakao.maps.event.removeListener(map, "zoom_changed", handleZoomChanged);
-  //     };
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [map, level]);
 
   return (
     <>

@@ -59,6 +59,10 @@ const Main = () => {
   }, [parsedData, isAnimating, currentFrame, startTime]);
 
   const startAnimation = () => {
+    if (parsedData.length === 0) {
+      alert("파일을 선택해주세요");
+      return;
+    }
     if (!isAnimating) {
       setIsAnimating(true);
       setIsPaused(false);
