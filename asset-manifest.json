@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/trafficSimulator/static/css/main.66bcb696.css",
+    "main.js": "/trafficSimulator/static/js/main.d230c4cb.js",
+    "static/js/453.9a59357d.chunk.js": "/trafficSimulator/static/js/453.9a59357d.chunk.js",
+    "static/media/car.svg": "/trafficSimulator/static/media/car.689f994b5537118c8d56f12d93355d81.svg",
+    "index.html": "/trafficSimulator/index.html",
+    "main.66bcb696.css.map": "/trafficSimulator/static/css/main.66bcb696.css.map",
+    "main.d230c4cb.js.map": "/trafficSimulator/static/js/main.d230c4cb.js.map",
+    "453.9a59357d.chunk.js.map": "/trafficSimulator/static/js/453.9a59357d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.66bcb696.css",
+    "static/js/main.d230c4cb.js"
+  ]
+}
