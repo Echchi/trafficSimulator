@@ -95,7 +95,6 @@ const Menu = ({ positions, setPositions }: IMenu) => {
   };
 
   const handleClickStartFrame = () => {
-    if (!isPaused) return;
     setCurrentFrame(0);
     setTimeout(() => {
       updateFramePosition();
@@ -135,11 +134,8 @@ const Menu = ({ positions, setPositions }: IMenu) => {
       <div className="flex space-x-4">
         <button
           className=" bg-white px-3 py-1 rounded-lg shadow-xl hover:shadow *:fill-blue-600 *:disabled:fill-gray-500 disabled:bg-gray-200 disabled:shadow-none"
-          onClick={() => {
-            console.log("버튼클릭");
-            handleClickStartFrame();
-          }}
-          disabled={!isPaused || parsedData.length === 0}
+          onClick={handleClickStartFrame}
+          disabled={parsedData.length === 0 || isAnimating}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -152,7 +148,7 @@ const Menu = ({ positions, setPositions }: IMenu) => {
         <button
           className=" bg-white px-3 py-1 rounded-lg shadow-xl hover:shadow *:fill-blue-600 *:disabled:fill-gray-500 disabled:bg-gray-200 disabled:shadow-none"
           onClick={startAnimation}
-          disabled={parsedData.length === 0 || (isAnimating && !isPaused)}
+          disabled={parsedData.length === 0 || isAnimating}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
