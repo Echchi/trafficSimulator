@@ -27,7 +27,7 @@ export default function FileUpload({ parsedData, setParsedData }: IFileUpload) {
         type="file"
         accept=".csv"
         onChange={handleFileUpload}
-        className="file:border-lg"
+        className="file"
       />
     </div>
   );
