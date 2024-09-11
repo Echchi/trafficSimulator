@@ -3,15 +3,20 @@ import { parseCSV } from "../utils/parseCSV";
 interface IFileUpload {
   parsedData: any[];
   setParsedData: React.Dispatch<React.SetStateAction<any[]>>;
+  resetState: () => void;
 }
-export default function FileUpload({ parsedData, setParsedData }: IFileUpload) {
+export default function FileUpload({
+  parsedData,
+  setParsedData,
+  resetState,
+}: IFileUpload) {
   useEffect(() => {
     console.log("parsedData", parsedData);
   }, [parsedData]);
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
-
+    resetState();
     const reader = new FileReader();
     reader.onload = function (e) {
       const content = e.target?.result as string;

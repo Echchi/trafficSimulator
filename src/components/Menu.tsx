@@ -17,7 +17,14 @@ const Menu = ({ positions, setPositions }: IMenu) => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [currentTime, setCurrentTime] = useState<number>(0);
-
+  const resetState = () => {
+    setCurrentFrame(0);
+    setStartTime(0);
+    setIsAnimating(false);
+    setIsPaused(false);
+    setCurrentTime(0);
+    setPositions([]); // 위치도 초기화
+  };
   useEffect(() => {
     if (!isAnimating && isPaused && currentFrame === 0) {
       updateFramePosition();
@@ -28,7 +35,6 @@ const Menu = ({ positions, setPositions }: IMenu) => {
     let interval: NodeJS.Timeout | null = null;
     if (isAnimating && !isPaused && parsedData.length > 0) {
       interval = setInterval(() => {
-        console.log("currentFrame", currentFrame);
         const frameTime = Number(startTime) + Number(currentFrame);
         setCurrentTime(frameTime);
         const frames = parsedData.filter(
@@ -130,7 +136,11 @@ const Menu = ({ positions, setPositions }: IMenu) => {
         )}
       </AnimatePresence>
 
-      <FileUpload parsedData={parsedData} setParsedData={setParsedData} />
+      <FileUpload
+        parsedData={parsedData}
+        setParsedData={setParsedData}
+        resetState={resetState}
+      />
       <div className="flex space-x-4">
         <button
           className=" bg-white px-3 py-1 rounded-lg shadow-xl hover:shadow *:fill-blue-600 *:disabled:fill-gray-500 disabled:bg-gray-200 disabled:shadow-none"
