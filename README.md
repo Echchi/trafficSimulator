@@ -1,46 +1,26 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 차량 시뮬레이터
 
-## Available Scripts
+차량 데이터를 기반으로 이동 경로를 시각화하는 시뮬레이터
 
-In the project directory, you can run:
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React.js: 사용자 인터페이스를 구축하기 위한 라이브러러리
+- Tailwind CSS: 스타일링을 위해 사용된 유틸리티 기반의 CSS 프레임워크
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Usage/Examples
+| Time(1초씩 증가하는 시간)  | VehID(차량 아이디) | Direction(방향)   | X(X좌표)          | Y(Y좌표)          | Speed(속도) | Mode(모드) |
+|-------|-------|-------------|------------|------------|-------|------|
+| 36001 | 120   | 169.563904  | 129.302750 | 35.501606  | 1     | 9    |
+| 36001 | 2648  | 54.768921   | 129.262589 | 35.415146  | 1     | 1    |
+| 36001 | 4502  | 148.540924  | 129.279922 | 35.482296  | 1     | 1    |
+| 36002 | 120   | 169.563919  | 129.302780 | 35.501499  | 2     | 9    |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+위 양식과 같은 csv 파일을 선택하면 해당 데이터를 기반으로 차량 이동경로를 시각화
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Demo
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://drive.google.com/file/d/1LrEEP2--qYvMDMEKxWlHD0rsYnV-OWJk/view?usp=sharing
